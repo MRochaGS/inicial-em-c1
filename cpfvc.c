@@ -52,6 +52,6 @@ int main() {
         dv2 = 11 - rest2;
     }
 
-    printf("Os digitos verificadores sao %d\n %d\n", dv1, dv2);
+    printf("Os digitos verificadores sao %d%d", dv1, dv2);
     return 0;
 }
