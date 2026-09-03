@@ -1,36 +1,34 @@
 #include <stdio.h>
 
 int main() {
-    int nota1, nota2, nota3, media1, ver1, ver2;
+    int nota, media = 0;
+    int men, mai;
 
-    printf("Digite a nota 1: ");
-    scanf("%d", &nota1);
+    for (int i = 1;i<=10;i++){
+        printf("Digite a nota %d: ", i);
+        scanf("%d", &nota);
 
-    printf("Digite a nota 2: ");
-    scanf("%d", &nota2);
-
-    printf("Digite a nota 3: ");
-    scanf("%d", &nota3);
-
-    media1 = (nota1 + nota2 + nota3) /3;
-
-    if (nota1 > nota2 && nota1 > nota3){
-        printf("A maior nota e %d\n", nota1);
+        if (i == 1) {
+            men = nota;
+            mai = nota;
+        }
+        if (nota < men) {
+            men = nota;
+        }
+        if (nota > mai) {
+            mai = nota;
+        }
+        media += nota;
+        if (nota < 0 || nota > 10){
+            printf("Nota invalida, digite novamente\n");
+            i--;
+        }
+        if (i == 10){
+            media = media / 10;
+            printf("A media das notas e: %d\n", media);
+            printf("A menor nota e: %d\n", men);
+            printf("A maior nota e: %d\n", mai);
+        }
     }
-    if (nota2 > nota1 && nota2 > nota3){
-        printf("A maior nota e %d\n", nota2);
-    }
-    if (nota3 > nota2 && nota3 > nota1){
-        printf("A maior nota e %d\n", nota3);
-    }
-    if (nota1 < nota2 && nota1 < nota3){
-        printf("A menor nota e %d\n", nota1);
-    }
-    if (nota2 < nota1 && nota2 < nota3){
-        printf("A menor nota e %d\n", nota2);
-    }
-    if (nota3 < nota2 && nota3 < nota1){
-        printf("A menor nota e %d\n", nota3);
-    }
-    
-    }
+    return 0;
+}
