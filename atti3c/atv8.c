@@ -6,19 +6,12 @@ int main(){
     printf("Qual sera o tamanho da piramide: ");
     scanf("%d", &pira);
 
-    //for (int i = 0; i <= pira; i++){
-    while (1){
-        int i;
-        i = 20;
+    for (int i = 1; i <= pira; i++) {
 
-        if (i >= 0){
-            i--;
+        for (int j = 1; j <= i; j++) {
             printf("*");
         }
-        else{
+            
             printf("\n");
         }
-        
-    }
-    
 }
